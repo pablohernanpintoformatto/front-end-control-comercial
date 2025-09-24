@@ -1,3 +1,55 @@
-<p>front-page works!</p>
+<!DOCTYPE html>
+<html lang="en">
 
-<button (click)="logout()">Cerrar sesión</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <mat-drawer-container autosize>
+
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <p>Contenido del sidenav</p>
+            <button (click)="showFiller = !showFiller" matButton="elevated">
+                Toggle extra text
+            </button>
+        </mat-drawer>
+
+        <mat-sidenav-content>
+            <header>
+                <mat-toolbar>
+                    <div class="left">
+                        <button matIconButton (click)="drawer.toggle()" aria-label="Menu icon">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                    </div>
+                    <div class="center">
+                        <img src="Formatto-Logo.png" alt="logo_formato" class="logo" />
+                    </div>
+                    <div class="right">
+
+                        <button matButton [matMenuTriggerFor]="beforeMenu">
+                            <mat-icon class="large-icon">person</mat-icon>
+                        </button>
+                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                            <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+                            <!-- <button mat-menu-item>Item 2</button> -->
+                        </mat-menu>
+                    </div>
+                </mat-toolbar>
+            </header>
+            <hr style="border: 1px solid #c0bfbf;">
+
+            <main>
+                <!-- Aquí va el contenido principal de la página -->
+
+            </main>
+
+        </mat-sidenav-content>
+
+    </mat-drawer-container>
+</body>
+
+</html>

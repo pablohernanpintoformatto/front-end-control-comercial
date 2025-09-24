@@ -1,0 +1,52 @@
+html,
+body,
+mat-drawer-container,
+mat-sidenav-content {
+    height: 100%;
+    margin: 0;
+}
+
+.example-sidenav {
+    width: 250px;
+}
+
+header mat-toolbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.large-icon {
+  font-size: 30px !important;
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 20vh;
+    display: block;
+}
+
+.mat-menu-item{
+    font-family: "Raleway", sans-serif;
+
+}
