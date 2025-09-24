@@ -24,12 +24,19 @@ export class Login {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      correo: ['', [Validators.required, Validators.email]],
+      contrasenia: ['', Validators.required]
     });
   }
 
+  registrar(){
+    this.router.navigate(['/registrar'])
+  }
+
+
   onSubmit() {
+    console.log(this.loginForm.value) 
+
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: () => this.router.navigate(['/page']),

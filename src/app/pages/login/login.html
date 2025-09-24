@@ -25,17 +25,17 @@
         <form class="campos" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="campo">
                 <h3>Email</h3>
-                <input type="email" formControlName="email" placeholder="Usuario@formatto.cl" required />
+                <input type="email" formControlName="correo" placeholder="Usuario@formatto.cl" required />
             </div>
             <div class="campo">
                 <h3>Contraseña</h3>
-                <input type="password" formControlName="password" placeholder="**************" required />
+                <input type="password" formControlName="contrasenia" placeholder="**************" required />
             </div>
             <div class="botones">
-                <button type="submit" >Iniciar</button>
-                <button type="submit" >Crear cuenta</button>
-
+                <button type="submit">Iniciar</button>
+                <button type="button" (click)="registrar()">Crear cuenta</button>
             </div>
+
             <p [class.visible]="errorMessage" class="fade-in-error">
                 {{ errorMessage }}
             </p>

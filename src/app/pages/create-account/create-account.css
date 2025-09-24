@@ -1,0 +1,136 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+header img {
+    width: 40vh;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+    text-align: center;
+
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.campo select {
+  width: 30.5vh;
+  height: 4.5vh;
+  border-width: 1px;
+  font-family: "Raleway", sans-serif;
+}
+
+
+.tituloLogin h2 {
+    font-weight: 1;
+    font-size: 2vh;
+    font-family: "Josefin Sans", sans-serif;
+    color: #9f9e9e;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.tituloLogin h1 {
+    font-weight: 1;
+    font-size: 5vh;
+    font-family: "Titillium Web", sans-serif;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    padding-top: 4vh;
+}
+
+.botones button {
+
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: background-color 0.2s ease;
+}
+
+.botones button:hover  {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+
+}
+
+
+
+
+.campo {
+    margin-top: 1.5vh;
+}
+
+.tituloLogin {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+
+.campo h3 {
+    text-align: left;
+    font-weight: 5;
+    font-size: 2vh;
+    font-family: "Raleway", sans-serif;
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+}
+
+.campo input {
+    width: 30vh;
+    height: 4vh;
+    border-width: 1px;
+
+}
+
+.fade-in-error {
+    font-family: "Raleway", sans-serif;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    height: 2rem;
+    /* reserva espacio suficiente */
+}
+
+.fade-in-error.visible {
+    opacity: 1;
+    visibility: visible;
+}
+

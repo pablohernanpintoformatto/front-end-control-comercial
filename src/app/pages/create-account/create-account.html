@@ -1,1 +1,82 @@
-<p>create-account works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="Formatto-Logo.png" alt="logo_formato" />
+    </header>
+
+
+    <hr style="border: 1px solid #c0bfbf;">
+
+
+    <div class="login-container">
+        <section class="tituloLogin">
+            <h1>Crear una nueva cuenta</h1>
+            <h2 (click)="inicio()" style="cursor: pointer;">[¿Ya estás registrado? Inicia sesión]</h2>
+        </section>
+        <form class="campos" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="campo">
+                <h3>Nombre</h3>
+                <input type="text" formControlName="nombre" placeholder="Juan Perez" required />
+            </div>
+            <div class="campo">
+                <h3>Correo</h3>
+                <input type="email" formControlName="correo" placeholder="Juan.perez@formatto.cl" required />
+            </div>
+            <div class="campo">
+                <h3>RUT</h3>
+                <input type="text" formControlName="rut" placeholder="11111111-0" required />
+            </div>
+            <div class="campo">
+                <h3>Telefono</h3>
+                <input type="number" formControlName="telefono" placeholder="123456789" required />
+            </div>
+            <div class="campo">
+                <h3>Área de trabajo</h3>
+                <select formControlName="area_trabajo" required>
+                    <option value="" disabled selected>Seleccione un área</option>
+                    <option *ngFor="let area of areasTrabajo" [value]="area">{{ area }}</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <h3>Contraseña</h3>
+                <input type="password" formControlName="contrasenia" placeholder="***********" required />
+            </div>
+
+            <div class="campo">
+                <h3>Repita contraseña</h3>
+                <input type="password" formControlName="contrasenia2" placeholder="***********" required />
+            </div>
+
+            <div class="botones">
+                <button type="submit">registrar</button>
+                <button type="button" (click)="inicio()">Volver a inicio</button>
+            </div>
+
+            <p [class.visible]="formSubmitted && registerForm.hasError('mismatch')" class="fade-in-error">
+                Las contraseñas no coinciden
+            </p>
+            <p [class.visible]="formSubmitted && registerForm.get('rut')?.hasError('rutInvalido')"
+                class="fade-in-error">
+                RUT inválido.
+            </p>
+
+            <p [class.visible]="formSubmitted && registerForm.get('telefono')?.hasError('numeroInvalido')"
+                class="fade-in-error">
+                Número no válido
+            </p>
+
+        </form>
+    </div>
+</body>
+
+</html>
