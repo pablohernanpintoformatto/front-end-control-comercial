@@ -50,3 +50,33 @@ header mat-toolbar {
     font-family: "Raleway", sans-serif;
 
 }
+
+
+.formularios{
+
+    display: flex;
+    justify-content: center;
+    font-family: "Raleway", sans-serif;
+    margin: 1vh;
+    font-weight: 1px;
+}
+
+
+.mat-menu-item{
+        font-family: "Raleway", sans-serif;
+    font-weight: 1px;   
+}
+
+.titulo{
+        justify-content: center;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.titulo img{
+    padding: 1.1vh;
+    width: 2vh;
+    height: 2vh;
+
+}

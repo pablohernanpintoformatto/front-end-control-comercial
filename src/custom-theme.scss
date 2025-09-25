@@ -1,4 +1,3 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
@@ -7,14 +6,30 @@
 @use '@angular/material' as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+.mi-tab-personalizado {
+  @include mat.tabs-overrides((active-indicator-color:#d34f30,
+
+      active-focus-indicator-color:#d34f30,
+      active-hover-indicator-color: #d34f30,
+
+    ));
+}
+
+
+:root {
+  @include mat.menu-overrides((container-color: white,
+      container-shape: 8px,
+      container-elevation-shadow: 0 0 0 2px rgb(223, 220, 220), // simula un borde verde
+      divider-color: #ddd,
+    ));
 }
 
 body {

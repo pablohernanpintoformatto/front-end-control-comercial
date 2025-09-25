@@ -1,0 +1,10 @@
+.example-container {
+  width: auto;
+  height: 200px;
+  margin: 2px;
+  background: #eee;
+}
+
+.sidebar {
+  width: 25vh;
+}
