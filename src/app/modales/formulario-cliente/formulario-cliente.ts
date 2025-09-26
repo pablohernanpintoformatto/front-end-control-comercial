@@ -58,7 +58,7 @@ export class FormularioCliente {
       const clienteData = this.clienteForm.value;
       console.log('Cliente ingresado:', clienteData);
 
-  /* 
+   
       this.http.post(this.apiUrl + '/cliente/add', clienteData).subscribe(
         (data) => {
           alert('SE HA REGISTRADO CLIENTE');
@@ -73,7 +73,7 @@ export class FormularioCliente {
       );
     } else {
       this.clienteForm.markAllAsTouched();
-      alert('INGRESO NO VÁLIDO');*/
+      alert('INGRESO NO VÁLIDO');
     }
   } 
 

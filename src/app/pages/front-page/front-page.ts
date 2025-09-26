@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { FormularioCgvConstructora } from '../../modales/formulario-cgv-constructora/formulario-cgv-constructora';
 import { FormularioCliente } from '../../modales/formulario-cliente/formulario-cliente';
+import { FormularioContactoCliente } from '../../modales/formulario-contacto-cliente/formulario-contacto-cliente';
 @Component({
   selector: 'app-front-page',
   standalone: true,
@@ -38,8 +39,13 @@ export class FrontPage {
     this.dialog.open(FormularioCgvConstructora);
   }
 
-  agregarContacto(): void {
+  agregarCliente(): void {
     this.dialog.open(FormularioCliente)
   }
+
+  agregarContacto(): void {
+    this.dialog.open(FormularioContactoCliente)
+  }
+
 
 }

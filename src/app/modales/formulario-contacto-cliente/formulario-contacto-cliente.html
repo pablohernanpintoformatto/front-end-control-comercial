@@ -1,1 +1,99 @@
-<p>formulario-contacto-cliente works!</p>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span (click)="closeDialog()" class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="header">
+                <img src="Formatto-Logo.png" alt="logo_formato" />
+                <h1>Ingreso de cliente</h1>
+            </div>
+
+            <section class="inputs">
+                <form [formGroup]="clienteForm" (ngSubmit)="agregarCliente()">
+
+                    <div class="form-row">
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Nombre de cliente</mat-label>
+                            <input matInput placeholder="Miguel Perez" formControlName="nombre_cliente_contacto"
+                                required />
+                            @if (clienteForm.get('nombre_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('nombre_cliente_contacto')?.touched) {
+                            <mat-error>El nombre del contacto es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Cargo del contacto</mat-label>
+                            <input matInput placeholder="Profesional de terreno"
+                                formControlName="cargo_cliente_contacto" required />
+                            @if (clienteForm.get('cargo_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('cargo_cliente_contacto')?.touched) {
+                            <mat-error>El cargo del contacto es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Correo corporativo</mat-label>
+                            <input matInput placeholder="ejemplo@corporativo.cl"
+                                formControlName="correo_corporativo_cliente_contacto" required />
+                            @if (clienteForm.get('correo_corporativo_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('correo_corporativo_cliente_contacto')?.touched) {
+                            <mat-error>El correo corporativo <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                    </div>
+
+
+                    <!-- correo_personal_cliente_contacto -->
+                    <div class="form-row">
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Correo personal</mat-label>
+                            <input matInput placeholder="correo@personal.cl"
+                                formControlName="correo_personal_cliente_contacto" required />
+                            @if (clienteForm.get('correo_personal_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('correo_personal_cliente_contacto')?.touched) {
+                            <mat-error>El correo personal es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                        <!-- telefono_personal_cliente_contacto -->
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Telefono personal</mat-label>
+                            <span matTextPrefix>+56 &nbsp;</span>
+                            <input type="tel" matInput placeholder="123456789"
+                                formControlName="telefono_personal_cliente_contacto" required />
+                            @if (clienteForm.get('telefono_personal_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('telefono_personal_cliente_contacto')?.touched) {
+                            <mat-error>El telefono personal es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+
+                        <!-- telefono_corporativo_cliente_contacto -->
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Telefono corporativo</mat-label>
+                            <span matTextPrefix>+56 &nbsp;</span>
+                            <input type="tel" matInput placeholder="123456789"
+                                formControlName="telefono_corporativo_cliente_contacto" required />
+                            @if (clienteForm.get('telefono_corporativo_cliente_contacto')?.hasError('required') &&
+                            clienteForm.get('telefono_corporativo_cliente_contacto')?.touched) {
+                            <mat-error>El telefono corporativo es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="botones">
+                        <app-boton type="submit" texto="Ingresar"></app-boton>
+                        <app-boton type="button" texto="Cancelar" (click)="closeDialog()"></app-boton>
+                    </div>
+
+                </form>
+            </section>
+
+        </div>
+    </div>
+</div>
