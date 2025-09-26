@@ -10,29 +10,36 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BarraVistas } from "../../components/barra-vistas/barra-vistas";
 import { TablaInfo } from "../../components/tabla-info/tabla-info";
-
+import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { FormularioCgvConstructora } from '../../modales/formulario-cgv-constructora/formulario-cgv-constructora';
+import { FormularioCliente } from '../../modales/formulario-cliente/formulario-cliente';
 @Component({
   selector: 'app-front-page',
   standalone: true,
   imports: [MatIconModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatTabsModule, BarraVistas, TablaInfo], // Agregar los módulos aquí
   templateUrl: './front-page.html',
   styleUrls: ['./front-page.css'],
-  encapsulation: ViewEncapsulation.None // 👈 ESTO ES LO QUE HACE QUE FUNCIONE
 
 })
 export class FrontPage {
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    public dialog: MatDialog,
+    private http: HttpClient
+  ) { }
   showFiller = false;
   logout() {
     localStorage.removeItem('token'); // Elimina el token
     this.router.navigate(['/login']); // Redirige al login
   }
 
-/*   agregarReserva(id: number): void {
-    this.dialog.open(AgregarReservaComponent, {
-      data: { message: id, precio_noche: this.dataSource.data.find(item => item.id_estancia === id).precio_noche }
-    });
-  } */
 
+  agregarReserva(): void {
+    this.dialog.open(FormularioCgvConstructora);
+  }
+
+  agregarContacto(): void {
+    this.dialog.open(FormularioCliente)
+  }
 
 }

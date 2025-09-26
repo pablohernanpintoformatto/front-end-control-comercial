@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formulario-cgv-constructora',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './formulario-cgv-constructora.css'
 })
 export class FormularioCgvConstructora {
-
+  constructor(
+    private dialogRef: MatDialogRef<FormularioCgvConstructora>
+  ) { }
+  closeDialog() {
+    this.dialogRef.close(); // Esto cierra el modal correctamente
+  }
 }

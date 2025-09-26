@@ -135,8 +135,51 @@ button:hover {
 
 .header h1{
     font-family: "Raleway", sans-serif;
+    padding-top: 2vh;
+    font-weight: lighter;
 
 }
 .header img{
     width: 30vh;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 2vh;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Opcional: para que se ajusten si el espacio es muy reducido */
+  margin-bottom: 2vh;
+}
+
+.form-field {
+  flex: 1;
+  min-width: 200px;
 }

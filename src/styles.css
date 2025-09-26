@@ -6,12 +6,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 0 !important;
 }
 
-
-/* En styles.scss */
-mat-tab-group::part(indicator) {
-  background-color: #FF5722 !important;
-}
-
-.mat-mdc-tab.mdc-tab--active {
-  color: #FF5722 !important;
-}

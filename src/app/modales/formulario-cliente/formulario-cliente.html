@@ -1,0 +1,52 @@
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span (click)="closeDialog()" class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="header">
+                <img src="Formatto-Logo.png" alt="logo_formato" />
+                <h1>Ingreso de cliente</h1>
+            </div>
+
+            <section class="inputs">
+                <form [formGroup]="clienteForm" (ngSubmit)="agregarCliente()">
+
+                    <div class="form-row">
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Nombre de cliente</mat-label>
+                            <input matInput placeholder="Empresa cliente" formControlName="nombre_cliente" required />
+                            @if (clienteForm.get('nombre_cliente')?.hasError('required') &&
+                            clienteForm.get('nombre_cliente')?.touched) {
+                            <mat-error>El nombre del cliente es <strong>obligatorio</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="form-field">
+                            <mat-label>Rut Cliente</mat-label>
+                            <input matInput placeholder="11111111-1" formControlName="rut_cliente" required />
+
+                            @if (clienteForm.get('rut_cliente')?.hasError('required') &&
+                            clienteForm.get('rut_cliente')?.touched) {
+                            <mat-error>El rut del cliente es <strong>obligatorio</strong></mat-error>
+                            }
+
+                            @if (clienteForm.get('rut_cliente')?.hasError('rutInvalido') &&
+                            clienteForm.get('rut_cliente')?.touched) {
+                            <mat-error>El rut ingresado es <strong>inválido</strong></mat-error>
+                            }
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="botones">
+                        <app-boton type="submit" texto="Ingresar"></app-boton>
+                        <app-boton type="button" texto="Cancelar" (click)="closeDialog()"></app-boton>
+                    </div>
+
+                </form>
+            </section>
+
+        </div>
+    </div>
+</div>
